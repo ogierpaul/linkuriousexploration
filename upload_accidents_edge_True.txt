@@ -1,0 +1,4 @@
+LOAD CSV WITH HEADERS FROM 'file:///AccidentId_CompanyId.csv' AS csvLine
+MATCH (a:DunsID{duns:csvLine.duns}),(b:AccidentID{ accidentid: csvLine.accidentid})
+MERGE (b)-[r:hasImpactOn]->(a)
+

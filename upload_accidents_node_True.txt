@@ -1,0 +1,7 @@
+LOAD CSV WITH HEADERS FROM 'file:///AccidentID_attributes.csv' AS csvLine
+MERGE (n:AccidentID{ accidentid: csvLine.accidentid })
+SET
+	n.accidentid = csvLine.accidentid,
+n.location = csvLine.location,
+n.type = csvLine.type,
+n.text = csvLine.text;

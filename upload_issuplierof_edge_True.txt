@@ -1,0 +1,6 @@
+USING PERIODIC COMMIT 10000
+LOAD CSV WITH HEADERS FROM 'file:///issupplier_relations.csv' AS csvLine
+MATCH (a:DunsID{duns:csvLine.sourceid}),(b:DunsID{ duns: csvLine.targetid})
+MERGE (a)-[r:isSupplierOf]->(b)
+SET
+r.text=csvLine.text;

@@ -1,0 +1,7 @@
+CREATE CONSTRAINT ON (c:DunsID) ASSERT c.dunsid IS UNIQUE;
+
+CREATE CONSTRAINT ON (c:ErpID) ASSERT c.companysystemid IS UNIQUE;
+
+CREATE INDEX ON :DunsID(name);
+CREATE INDEX ON :ErpID(name);
+CREATE INDEX ON :ErpID(dunsid);

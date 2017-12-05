@@ -1,0 +1,4 @@
+MATCH (n)
+DETACH DELETE (N);
+
+
